@@ -38,13 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'maker',
-    'corsheaders',
-    'webpack_loader',
+    
     
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,24 +127,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 
 
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'home/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-        'LOADER_CLASS': 'maker.webpack.CustomWebpackLoader',
-    }
-}
-
 # my configs 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ORIGIN_ALLOW_ALL = True
 
 '''
 CORS_ORIGIN_ALLOW_ALL = False
