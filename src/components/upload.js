@@ -12,7 +12,10 @@ const UploadPic = () => {
   const [open,setOpen]= React.useState(false);
   const [loading,setLoading]= React.useState(false);
 
-const domain = "http://daneshju-hmd.ir"
+const domain = "http://entekhab1400.pythonanywhere.com"
+
+
+
   const download = e => {
     console.log(e.target.href);
     fetch(e.target.href, {
